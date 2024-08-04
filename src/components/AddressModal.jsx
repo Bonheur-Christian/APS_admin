@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { toast } from "react-toastify";
+import { API_url } from "../constants";
 
 function AddressModal({ visible, handleClose }) {
   if (!visible) return null;
@@ -23,7 +24,7 @@ function AddressModal({ visible, handleClose }) {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8800/updateAddress", {
+      const response = await fetch(`${API_url}/updateAddress`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -48,7 +49,7 @@ function AddressModal({ visible, handleClose }) {
   useEffect(() => {
     const fetchAddress = async () => {
       try {
-        const response = await fetch("http://localhost:8800/allAddress");
+        const response = await fetch(`${API_url}/allAddress`);
         if (!response.ok) {
           toast.error("Error Occurred");
         } else {

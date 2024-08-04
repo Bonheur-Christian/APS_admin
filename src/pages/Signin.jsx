@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { API_url } from "../constants";
 
 function Signin() {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ function Signin() {
       if (formData.email === "" || formData.password === "") {
         toast.error("All fields are required");
       } else {
-        const response = await fetch("http://localhost:8800/login", {
+        const response = await fetch(`${API_url}/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

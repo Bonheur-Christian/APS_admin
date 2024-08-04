@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 // import ModalComponent from "./ProjectModal";
 import ServiceModalComponent from "./ServiceModal";
 import { toast, ToastContainer } from "react-toastify";
+import { API_url } from "../constants";
 
 function ServiceSection({ children }) {
   const [visible, setVisible] = useState(false);
@@ -17,7 +18,7 @@ function ServiceSection({ children }) {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await fetch("http://localhost:8800/allServices");
+        const response = await fetch(`${API_url}/allServices`);
         if (!response.ok) {
           toast.error("Error Occured");
         } else {

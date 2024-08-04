@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { toast } from "react-toastify";
+import { API_url } from "../constants";
 
 function NewsModal({ visible, handleClose }) {
   if (!visible) return null;
@@ -30,7 +31,7 @@ function NewsModal({ visible, handleClose }) {
       return;
     }
     try {
-      const response = await fetch("http://localhost:8800/completedProject", {
+      const response = await fetch(`${API_url}/completedProject`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

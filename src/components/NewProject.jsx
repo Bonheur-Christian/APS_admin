@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ModalComponent from "./ProjectModal";
 import { toast, ToastContainer } from "react-toastify";
+import { API_url } from "../constants";
 
 function ProjectSection({ children }) {
   const [visible, setVisible] = useState(false);
@@ -16,7 +17,7 @@ function ProjectSection({ children }) {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch("http://localhost:8800/allProjects");
+        const response = await fetch(`${API_url}/allProjects`);
         if (!response.ok) {
           toast.error("Error Occurred");
         } else {

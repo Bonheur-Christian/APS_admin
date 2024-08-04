@@ -12,11 +12,6 @@ function Dashboard() {
     toast.dismiss(toastId);
     toast.success("Logged In", { toastId });
   }, []);
-  // const links = [
-  //   { svg: "svg/Dashboard.svg", label: "Dashboard", dest: "/dashboard" },
-  //   // { svg: "svg/book.svg", label: "Project Listing", dest: "/projects" },
-  //   // { svg: "svg/book.svg", label: "Service Listing", dest: "/services" },
-  // ];
   var showDate = new Date();
   var date =
     showDate.toDateString() +
@@ -31,17 +26,6 @@ function Dashboard() {
         <h1 className="text-4xl font-bold text-white ps-8 font-montserrat sticky top-0 py-12">
           APS
         </h1>
-        {/* <div className="pt-32">
-          {links.map((item, index) => (
-            <div
-              key={index}
-              className="text-white text-xl font-lato flex py-4 gap-4 ps-8"
-            >
-              <img src={item.svg} alt="Links" />
-              <a href={item.dest}>{item.label}</a>
-            </div>
-          ))}
-        </div> */}
         <div className="bg-white/30 px-6 py-12 mx-4 rounded-xl fixed bottom-12 space-y-4 w-[13vw]">
           <h1 className="text-xl text-white">Contact Developer</h1>
           <p className="text-gray-400 font-medium">

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { toast } from "react-toastify";
+import { API_url } from "../constants";
 
 function ServiceModalComponent({ visible, handleClose }) {
   if (!visible) return null;
@@ -25,7 +26,7 @@ function ServiceModalComponent({ visible, handleClose }) {
       return;
     }
     try {
-      const response = await fetch("http://localhost:8800/service", {
+      const response = await fetch(`${API_url}/service`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,7 +37,7 @@ function ServiceModalComponent({ visible, handleClose }) {
       if (!response.ok) {
         toast.error("Failed To Save New Service");
       } else {
-        handleClose()
+        handleClose();
         toast.success("Service Added");
       }
     } catch (err) {

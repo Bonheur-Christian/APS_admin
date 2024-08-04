@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import ModalComponent from "./ProjectModal";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import NewsModal from "./NewsModal";
+import { API_url } from "../constants";
 
 function NewsSection({ children }) {
   const [visible, setVisible] = useState(false);
@@ -17,7 +17,7 @@ function NewsSection({ children }) {
   useEffect(() => {
     const fetchCompletedProjects = async () => {
       try {
-        const response = await fetch("http://localhost:8800/completedProjects");
+        const response = await fetch(`${API_url}completedProjects`);
         if (!response.ok) {
           toast.error("Error Occurred");
         } else {

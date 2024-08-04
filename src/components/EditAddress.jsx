@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AddressModal from "./AddressModal";
 import { toast, ToastContainer } from "react-toastify";
+import { API_url } from "../constants";
 
 function AddressSection({ children }) {
   const [visible, setVisible] = useState(false);
@@ -16,7 +17,7 @@ function AddressSection({ children }) {
   useEffect(() => {
     const fetchAddress = async () => {
       try {
-        const response = await fetch("http://localhost:8800/allAddress");
+        const response = await fetch(`${API_url}/allAddress`);
         if (!response.ok) {
           toast.error("Error Occured");
         } else {
