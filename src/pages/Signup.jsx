@@ -36,7 +36,7 @@ function SignUp() {
   return (
     <div>
       <div className="flex flex-row-reverse">
-        <div className="bg-[url('images/form.png')] bg-no-repeat bg-cover w-[70vw] h-screen">
+        <div className="bg-[url('/images/form.png')] bg-no-repeat bg-cover w-[70vw] h-screen">
           <div className="bg-white/30 text-white px-12 py-12 rounded-xl fixed bottom-16 mx-12 space-y-6">
             <h1 className="text-4xl font-semibold font-serif">
               System Admnistration
@@ -92,7 +92,7 @@ function SignUp() {
                 />
               </div>
               <button className="bg-[#4327F4] hover:bg-blue-800 px-6 py-6 rounded-xl text-white font-medium text-xl tracking-wider w-[80%]">
-                SignUp  
+                SignUp
               </button>
             </div>
             <div className="flex items-center gap-4 fixed bottom-0 pb-4 hover:underline">
