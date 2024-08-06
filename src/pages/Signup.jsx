@@ -92,7 +92,7 @@ function SignUp() {
                 />
               </div>
               <button className="bg-[#4327F4] hover:bg-blue-800 px-6 py-6 rounded-xl text-white font-medium text-xl tracking-wider w-[80%]">
-                Signin
+                SignUp  
               </button>
             </div>
             <div className="flex items-center gap-4 fixed bottom-0 pb-4 hover:underline">

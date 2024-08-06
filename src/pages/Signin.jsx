@@ -25,6 +25,7 @@ function Signin() {
       if (formData.email === "" || formData.password === "") {
         toast.error("All fields are required");
       } else {
+        console.log(API_url);        
         const response = await fetch(`${API_url}/login`, {
           method: "POST",
           headers: {
